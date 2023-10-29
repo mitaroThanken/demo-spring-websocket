@@ -12,19 +12,19 @@
     }
 
     function withoutOriginOnclick() {
-        $.get("http://localhost:8002/time-without-origin", function (data, status) {
+        $.get("http://127.0.0.1:8002/time-without-origin", function (data, status) {
             response(data);
         });
     }
 
     function anyOriginOnclick() {
-        $.get("http://localhost:8002/time-any-origin", function (data, status) {
+        $.get("http://127.0.0.1:8002/time-any-origin", function (data, status) {
             response(data);
         });
     }
 
     function explicitOriginOnclick() {
-        $.get("http://localhost:8002/time-explicit-origin", function (data, status) {
+        $.get("http://127.0.0.1:8002/time-explicit-origin", function (data, status) {
             response(data);
         });
     }
@@ -37,7 +37,7 @@
     <button onclick="anyOriginOnclick()">CORS call: origin *</button>
 </div>
 <div>
-    <button onclick="explicitOriginOnclick()">CORS call: origin http://localhost:8001</button>
+    <button onclick="explicitOriginOnclick()">CORS call: origin http://127.0.0.1:8001</button>
 </div>
 <div id="response"></div>
 </body>

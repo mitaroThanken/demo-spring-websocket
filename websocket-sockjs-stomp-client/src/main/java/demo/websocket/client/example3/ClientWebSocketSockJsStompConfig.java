@@ -23,7 +23,7 @@ public class ClientWebSocketSockJsStompConfig {
                                                      StompSessionHandler stompSessionHandler) {
         WebSocketStompClient webSocketStompClient = new WebSocketStompClient(webSocketClient);
         webSocketStompClient.setMessageConverter(new StringMessageConverter());
-        webSocketStompClient.connect("http://localhost:8080/websocket-sockjs-stomp", stompSessionHandler);
+        webSocketStompClient.connect("http://127.0.0.1:8080/websocket-sockjs-stomp", stompSessionHandler);
         return webSocketStompClient;
     }
 

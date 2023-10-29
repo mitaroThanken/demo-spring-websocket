@@ -35,7 +35,7 @@ public class XfoController {
     @GetMapping(value = "/html-xfo-allowfrom", produces = MediaType.TEXT_HTML_VALUE)
     @ResponseBody
     public String getHtmlXfoAllowFrom(HttpServletResponse response) {
-        response.setHeader("X-Frame-Options", "ALLOW-FROM http://localhost:8001");
+        response.setHeader("X-Frame-Options", "ALLOW-FROM http://127.0.0.1:8001");
         return HTML;
     }
 }

@@ -6,9 +6,9 @@
     <script>
         window.onload = function () {
             const popup = document.getElementById('ifrm').contentWindow;
-            popup.postMessage("hello to iframe from parent!", "http://localhost:8002");
+            popup.postMessage("hello to iframe from parent!", "http://127.0.0.1:8002");
             window.addEventListener("message", (event) => {
-                if (event.origin !== "http://localhost:8002") {
+                if (event.origin !== "http://127.0.0.1:8002") {
                     console.log('wrong origin: ' + event.origin);
                     return;
                 }
@@ -19,7 +19,7 @@
 </head>
 <body>
 <div>
-    <iframe id="ifrm" src="http://localhost:8002/cdm-iframe.html"></iframe>
+    <iframe id="ifrm" src="http://127.0.0.1:8002/cdm-iframe.html"></iframe>
 </div>
 </body>
 </html>
