@@ -14,7 +14,7 @@ public class ServerWebSocketSockJsConfig implements WebSocketConfigurer {
 	@Override
 	public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
 		registry.addHandler(webSocketHandler(), "/websocket-sockjs")
-				.setAllowedOrigins("*")
+//				.setAllowedOrigins("*")
 				.withSockJS()
 				.setWebSocketEnabled(true)
 				.setHeartbeatTime(25000)
