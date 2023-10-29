@@ -22,7 +22,7 @@ public class CorsController {
         return LocalTime.now().toString();
     }
 
-    @CrossOrigin(origins = "http://localhost:8001")
+    @CrossOrigin(origins = "http://127.0.0.1:8001")
     @GetMapping(value = "/time-explicit-origin")
     public String getTimeExplicitOrigin() {
         return LocalTime.now().toString();

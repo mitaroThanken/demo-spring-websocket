@@ -21,7 +21,7 @@ function connect() {
     const transports = (option === 'all') ? [] : [option];
     console.log('Transports: ' + transports);
 
-    sockJS = new SockJS('http://localhost:8080/websocket-sockjs',
+    sockJS = new SockJS('http://127.0.0.1:8080/websocket-sockjs',
         'subprotocol.demo.websocket', {debug: true, transports: transports});
 
     sockJS.onopen = function () {

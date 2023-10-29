@@ -15,7 +15,7 @@ public class ClientWebSocketConfig {
         WebSocketConnectionManager manager = new WebSocketConnectionManager(
                 webSocketClient(),
                 webSocketHandler(),
-                "ws://localhost:8080/websocket"
+                "ws://127.0.0.1:8080/websocket"
         );
         manager.setAutoStartup(true);
         return manager;

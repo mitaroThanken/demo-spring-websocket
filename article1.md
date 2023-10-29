@@ -407,7 +407,7 @@ let webSocket = null;
 
 // 'Connect' button click handler
 function connect() {
-   webSocket = new WebSocket('ws://localhost:8080/websocket',
+   webSocket = new WebSocket('ws://127.0.0.1:8080/websocket',
        'subprotocol.demo.websocket');
 
    webSocket.onopen = function () {
@@ -503,7 +503,7 @@ public class ClientWebSocketConfig {
        WebSocketConnectionManager manager = new WebSocketConnectionManager(
                webSocketClient(),
                webSocketHandler(),
-               "ws://localhost:8080/websocket"
+               "ws://127.0.0.1:8080/websocket"
        );
        manager.setAutoStartup(true);
        return manager;

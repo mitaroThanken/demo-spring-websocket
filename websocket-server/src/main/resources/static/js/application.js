@@ -15,7 +15,7 @@ function setConnected(connected) {
 }
 
 function connect() {
-    webSocket = new WebSocket('ws://localhost:8080/websocket',
+    webSocket = new WebSocket('ws://127.0.0.1:8080/websocket',
         'subprotocol.demo.websocket');
 
     webSocket.onopen = function () {
