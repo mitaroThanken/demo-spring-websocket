@@ -11,10 +11,10 @@ public class Performance {
     private long totalSwapSpaceSize;
     private long freeSwapSpaceSize;
 
-    private long totalPhysicalMemorySize;
-    private long freePhysicalMemorySize;
+    private long totalMemorySize;
+    private long freeMemorySize;
 
-    private double systemCpuLoad;
+    private double cpuLoad;
     private double processCpuLoad;
 
     public long getTime() {
@@ -49,28 +49,28 @@ public class Performance {
         this.freeSwapSpaceSize = freeSwapSpaceSize;
     }
 
-    public long getTotalPhysicalMemorySize() {
-        return totalPhysicalMemorySize;
+    public long getTotalMemorySize() {
+        return totalMemorySize;
     }
 
-    public void setTotalPhysicalMemorySize(long totalPhysicalMemorySize) {
-        this.totalPhysicalMemorySize = totalPhysicalMemorySize;
+    public void setTotalMemorySize(long totalMemorySize) {
+        this.totalMemorySize = totalMemorySize;
     }
 
-    public long getFreePhysicalMemorySize() {
-        return freePhysicalMemorySize;
+    public long getFreeMemorySize() {
+        return freeMemorySize;
     }
 
-    public void setFreePhysicalMemorySize(long freePhysicalMemorySize) {
-        this.freePhysicalMemorySize = freePhysicalMemorySize;
+    public void setFreeMemorySize(long freeMemorySize) {
+        this.freeMemorySize = freeMemorySize;
     }
 
-    public double getSystemCpuLoad() {
-        return systemCpuLoad;
+    public double getCpuLoad() {
+        return cpuLoad;
     }
 
-    public void setSystemCpuLoad(double systemCpuLoad) {
-        this.systemCpuLoad = systemCpuLoad;
+    public void setCpuLoad(double cpuLoad) {
+        this.cpuLoad = cpuLoad;
     }
 
     public double getProcessCpuLoad() {
@@ -88,9 +88,9 @@ public class Performance {
                 .add("committedVirtualMemorySize=" + committedVirtualMemorySize)
                 .add("totalSwapSpaceSize=" + totalSwapSpaceSize)
                 .add("freeSwapSpaceSize=" + freeSwapSpaceSize)
-                .add("totalPhysicalMemorySize=" + totalPhysicalMemorySize)
-                .add("freePhysicalMemorySize=" + freePhysicalMemorySize)
-                .add("systemCpuLoad=" + systemCpuLoad)
+                .add("totalMemorySize=" + totalMemorySize)
+                .add("freeMemorySize=" + freeMemorySize)
+                .add("cpuLoad=" + cpuLoad)
                 .add("processCpuLoad=" + processCpuLoad)
                 .toString();
     }

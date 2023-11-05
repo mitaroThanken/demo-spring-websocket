@@ -26,10 +26,10 @@ public class PerformanceService {
         performance.setTotalSwapSpaceSize(operatingSystemMXBean.getTotalSwapSpaceSize());
         performance.setFreeSwapSpaceSize(operatingSystemMXBean.getFreeSwapSpaceSize());
 
-        performance.setTotalPhysicalMemorySize(operatingSystemMXBean.getTotalPhysicalMemorySize());
-        performance.setFreePhysicalMemorySize(operatingSystemMXBean.getFreePhysicalMemorySize());
+        performance.setTotalMemorySize(operatingSystemMXBean.getTotalMemorySize());
+        performance.setFreeMemorySize(operatingSystemMXBean.getFreeMemorySize());
 
-        performance.setSystemCpuLoad(operatingSystemMXBean.getSystemCpuLoad());
+        performance.setCpuLoad(operatingSystemMXBean.getCpuLoad());
         performance.setProcessCpuLoad(operatingSystemMXBean.getProcessCpuLoad());
 
         return performance;

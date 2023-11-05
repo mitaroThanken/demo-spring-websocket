@@ -37,10 +37,10 @@ public class PerformanceController implements ApplicationListener<BrokerAvailabi
     public List<String> getNames() {
         return Arrays.asList(
                 "committedVirtualMemorySize",
-                "totalPhysicalMemorySize",
-                "freePhysicalMemorySize",
+                "totalMemorySize",
+                "freeMemorySize",
                 "totalSwapSpaceSize",
-                "freePhysicalMemorySize"
+                "freeMemorySize"
         );
     }
 
