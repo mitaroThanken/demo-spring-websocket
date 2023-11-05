@@ -2,6 +2,7 @@ package demo.websocket.client.example3;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.lang.Nullable;
 import org.springframework.messaging.simp.stomp.StompCommand;
 import org.springframework.messaging.simp.stomp.StompHeaders;
 import org.springframework.messaging.simp.stomp.StompSession;
@@ -26,12 +27,12 @@ public class ClientStompSessionHandler extends StompSessionHandlerAdapter {
     }
 
     @Override
-    public void handleFrame(StompHeaders headers, Object payload) {
+    public void handleFrame(StompHeaders headers, @Nullable Object payload) {
         logger.info("Client received: payload {}, headers {}", payload, headers);
     }
 
     @Override
-    public void handleException(StompSession session, StompCommand command,
+    public void handleException(StompSession session, @Nullable StompCommand command,
                                 StompHeaders headers, byte[] payload, Throwable exception) {
         logger.error("Client error: exception {}, command {}, payload {}, headers {}",
                 exception.getMessage(), command, payload, headers);
