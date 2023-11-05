@@ -25,7 +25,10 @@
 			"extensions": [
 				"vscjava.vscode-gradle",
 				"mhutchie.git-graph"
-			]
+			],
+			"settings": {
+				"java.compile.nullAnalysis.mode": "automatic"
+			}
 		}
 	}
 
