@@ -24,6 +24,7 @@
 		"vscode": {
 			"extensions": [
 				"vscjava.vscode-gradle",
+				"vmware.vscode-boot-dev-pack",
 				"mhutchie.git-graph"
 			],
 			"settings": {

@@ -14,6 +14,8 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation group: 'org.webjars', name: 'jquery', version:'3.4.1'
     implementation group: 'org.webjars', name: 'bootstrap', version:'4.4.1'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
 }
