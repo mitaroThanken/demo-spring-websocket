@@ -39,8 +39,7 @@ public class PerformanceController implements ApplicationListener<BrokerAvailabi
                 "committedVirtualMemorySize",
                 "totalMemorySize",
                 "freeMemorySize",
-                "totalSwapSpaceSize",
-                "freeMemorySize"
+                "totalSwapSpaceSize"
         );
     }
 
