@@ -23,7 +23,8 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"vscjava.vscode-gradle"
+				"vscjava.vscode-gradle",
+				"mhutchie.git-graph"
 			]
 		}
 	}
