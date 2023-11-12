@@ -18,18 +18,18 @@ import java.util.List;
 public class ClientWebSocketSockJsConfig {
 
     @Bean
-    public WebSocketConnectionManager webSocketConnectionManager() {
-        WebSocketConnectionManager manager = new WebSocketConnectionManager(
-                webSocketClient(),
-                webSocketHandler(),
-                "http://127.0.0.1:8080/websocket-sockjs"
-        );
-        manager.setAutoStartup(true);
+    public WebSocketConnectionManager webSocketConnectionManager(
+            final WebSocketClient webSocketClient,
+            final WebSocketHandler webSocketHandler) {
+        final var manager = new WebSocketConnectionManager(
+                webSocketClient,
+                webSocketHandler,
+                "http://127.0.0.1:8080/websocket-sockjs");
         return manager;
     }
 
     @Bean
-    public WebSocketClient webSocketClient() {
+    WebSocketClient webSocketClient() {
         List<Transport> transports = new ArrayList<>();
         transports.add(new WebSocketTransport(new StandardWebSocketClient()));
         transports.add(new RestTemplateXhrTransport());
@@ -37,7 +37,7 @@ public class ClientWebSocketSockJsConfig {
     }
 
     @Bean
-    public WebSocketHandler webSocketHandler() {
+    WebSocketHandler webSocketHandler() {
         return new ClientWebSocketHandler();
     }
 }

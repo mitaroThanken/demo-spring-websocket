@@ -11,23 +11,23 @@ import org.springframework.web.socket.client.standard.StandardWebSocketClient;
 public class ClientWebSocketConfig {
 
     @Bean
-    public WebSocketConnectionManager webSocketConnectionManager() {
-        WebSocketConnectionManager manager = new WebSocketConnectionManager(
-                webSocketClient(),
-                webSocketHandler(),
-                "ws://127.0.0.1:8080/websocket"
-        );
-        manager.setAutoStartup(true);
+    WebSocketConnectionManager webSocketConnectionManager(
+            final WebSocketClient webSocketClient,
+            final WebSocketHandler webSocketHandler) {
+        final var manager = new WebSocketConnectionManager(
+                webSocketClient,
+                webSocketHandler,
+                "ws://127.0.0.1:8080/websocket");
         return manager;
     }
 
     @Bean
-    public WebSocketClient webSocketClient() {
+    WebSocketClient webSocketClient() {
         return new StandardWebSocketClient();
     }
 
     @Bean
-    public WebSocketHandler webSocketHandler() {
+    WebSocketHandler webSocketHandler() {
         return new ClientWebSocketHandler();
     }
 }

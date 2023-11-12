@@ -19,16 +19,14 @@ import java.util.List;
 public class ClientWebSocketSockJsStompConfig {
 
     @Bean
-    public WebSocketStompClient webSocketStompClient(WebSocketClient webSocketClient,
-                                                     StompSessionHandler stompSessionHandler) {
+    WebSocketStompClient webSocketStompClient(final WebSocketClient webSocketClient) {
         WebSocketStompClient webSocketStompClient = new WebSocketStompClient(webSocketClient);
         webSocketStompClient.setMessageConverter(new StringMessageConverter());
-        webSocketStompClient.connectAsync("http://127.0.0.1:8080/websocket-sockjs-stomp", stompSessionHandler);
         return webSocketStompClient;
     }
 
     @Bean
-    public WebSocketClient webSocketClient() {
+    WebSocketClient webSocketClient() {
         List<Transport> transports = new ArrayList<>();
         transports.add(new WebSocketTransport(new StandardWebSocketClient()));
         transports.add(new RestTemplateXhrTransport());
@@ -36,7 +34,7 @@ public class ClientWebSocketSockJsStompConfig {
     }
 
     @Bean
-    public StompSessionHandler stompSessionHandler() {
+    StompSessionHandler stompSessionHandler() {
         return new ClientStompSessionHandler();
     }
 }
