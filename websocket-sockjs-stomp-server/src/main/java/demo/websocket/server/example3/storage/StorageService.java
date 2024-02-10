@@ -3,7 +3,6 @@ package demo.websocket.server.example3.storage;
 import java.nio.file.Path;
 import java.util.stream.Stream;
 
-import org.springframework.core.io.Resource;
 import org.springframework.web.multipart.MultipartFile;
 
 public interface StorageService {
@@ -15,7 +14,7 @@ public interface StorageService {
 
     Path load(String filename);
 
-    Resource loadAsResource(String filename);
+    FileStreamingResponseBody loadAsResource(String filename);
 
     void deleteAll();
 }
