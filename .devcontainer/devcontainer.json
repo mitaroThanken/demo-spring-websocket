@@ -29,7 +29,8 @@
 			],
 			"settings": {
 				"java.compile.nullAnalysis.mode": "automatic",
-				"java.import.gradle.user.home": "${containerWorkspaceFolder}/.gradle"
+				"java.import.gradle.user.home": "${containerWorkspaceFolder}/.gradle",
+				"java.gradle.buildServer.enabled": "off"
 			}
 		}
 	}
