@@ -67,7 +67,7 @@ public class FileSystemStorageService implements StorageService {
     }
 
     @Override
-    public FileStreamingResponseBody loadAsResource(String filename) {
+    public FileStreamingResponseBody loadAsStreamingResponseBody(String filename) {
         Path file = load(filename);
         return new FileStreamingResponseBody(file);
     }

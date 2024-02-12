@@ -14,7 +14,7 @@ public interface StorageService {
 
     Path load(String filename);
 
-    FileStreamingResponseBody loadAsResource(String filename);
+    FileStreamingResponseBody loadAsStreamingResponseBody(String filename);
 
     void deleteAll();
 }

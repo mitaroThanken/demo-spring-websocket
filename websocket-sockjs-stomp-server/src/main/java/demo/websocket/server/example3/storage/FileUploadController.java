@@ -31,7 +31,7 @@ public class FileUploadController {
 
     @GetMapping("/{filename:.+}")
     public ResponseEntity<StreamingResponseBody> serveFile(@PathVariable("filename") String filename) {
-        FileStreamingResponseBody response = storageService.loadAsResource(filename);
+        FileStreamingResponseBody response = storageService.loadAsStreamingResponseBody(filename);
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + response.getFileName() + "\"")
                 .body(response);
