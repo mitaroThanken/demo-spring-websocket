@@ -28,6 +28,10 @@ public class FileStreamingResponseBody implements StreamingResponseBody {
         return path.getFileName().toString();
     }
 
+    public long size() throws IOException {
+        return Files.size(path);
+    }
+
     @Override
     public void writeTo(@NonNull OutputStream outputStream) throws IOException {
         log.info("Response: " + path);

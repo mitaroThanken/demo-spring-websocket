@@ -34,6 +34,7 @@ public class FileUploadController {
         FileStreamingResponseBody response = storageService.loadAsStreamingResponseBody(filename);
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + response.getFileName() + "\"")
+                .contentLength(response.size())
                 .body(response);
     }
 
