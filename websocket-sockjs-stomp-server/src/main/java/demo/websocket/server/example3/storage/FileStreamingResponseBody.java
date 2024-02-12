@@ -5,6 +5,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,6 +32,14 @@ public class FileStreamingResponseBody implements StreamingResponseBody {
 
     public long size() throws IOException {
         return Files.size(path);
+    }
+
+    public @NonNull Instant lastModified() throws IOException {
+        final var lastModified = Files.getLastModifiedTime(path).toInstant().truncatedTo(ChronoUnit.SECONDS);
+        if (lastModified == null) {
+            throw new NullPointerException();
+        }
+        return lastModified;
     }
 
     @Override
